@@ -1,4 +1,6 @@
-# Job Search Management Tool
+# LinkedList
+
+Job Search Management Tool
 
 Job seekers can use this dashboard to plan and manage the entire job application process.
 
@@ -14,7 +16,6 @@ Job seekers can use this dashboard to plan and manage the entire job application
 1. [Requirements](#requirements)
 1. [Development](#development)
     1. [Installing Dependencies](#installing-dependencies)
-    1. [Tasks](#tasks)
 1. [Team](#team)
 1. [Contributing](#contributing)
 
@@ -22,54 +23,12 @@ Job seekers can use this dashboard to plan and manage the entire job application
 1. Install dependencies (instructions below)
 2. npm start
 
-## Project File Structure
-/ [ root ] 
- 	README.md
- 	package.json
-.gitignore
-/server
-server.js
-   	server.config.js
-	/routes
-routes.js
-/config
-	config.js
-/utils
-	helpers.js
-middleware.js
-/models
-  		 . . .
-/client
-	index.html
-    	style.css
-	/lib
-		. . .
-/assets
-		. . .
-  	/app
-      		app.js
-      		/layout
-	        	topbar.controller.js
-	        	topbar.html
-		sidebar.controller.js
-		sidebar.html
-/dashboard
-dashboard.controller.js
-        	dashboard.html
-	      		/input
-				job-entry.html
-				job-entry.controller.js
-     		/services
-			. . .
-/node_modules
-bower.json
-.bowerrc
-
 ## Requirements
 
 - Node.js latest
 - npm latest
 - bower latest
+- mongodb latest
 
 ## Development
 
@@ -80,10 +39,21 @@ From within the root directory:
 ```sh
 sudo npm install -g bower
 npm install
-cd public
 bower install
-cd ..
+sudo npm install -g grunt
+grunt build
+sudo service mongod start
 ```
+### Putting in API Keys and Mongodb
+
+Get Bing News API Key and put into /server/config/config.js
+- https://www.microsoft.com/cognitive-services/en-us/bing-news-search-api
+
+Get Full Contact API Key and put into /server/config/config.js
+- https://www.fullcontact.com/developer/docs/company/ 
+
+Start mongod service or host mongod on MLabs
+Put URI into /server/db/db-config.js
 
 ## Contributing
 

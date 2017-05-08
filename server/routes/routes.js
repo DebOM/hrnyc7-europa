@@ -404,9 +404,6 @@ module.exports = function(app, express) {
 	app.post('/api/register', function(req, res) {
 		console.log('attempting to register', req.body.username, req.body.password);
 
-		/***
-		 * AQUI YACE EL PROBLEMA!
-		 ***/
 	  User.register(new User({
 			username: req.body.username,
 			email: req.body.email,
