@@ -24,6 +24,7 @@ angular.module('app.services', [])
     return Promise.all(companiesArray.map(comp => {
       return $http.get('/api/news/?company='+comp)
     }))
+    //based on number of companies, determine how many articles per company to include:
     .then(data=>{
       var companies = data.length;
       if(companies>4){
@@ -239,6 +240,7 @@ angular.module('app.services', [])
     $http.get('/api/logout');
   }
 
+  // Use API to backend to check if user is logged in and session exists
   var status = ($rootScope, $location, $http) => {
     $rootScope.$on('$routeChangeStart', function (evt, next, current) {
       $http.get('/api/status').then(function(data){

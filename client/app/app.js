@@ -28,7 +28,7 @@ angular.module('app',[
       redirectTo: '/'
     })
 })
-.controller('navController', function($scope, $location, $interval) {
+.controller('navController', function($scope, $location) {
     $scope.showSignUp = false;
 
     $scope.renderNavButtons = function() {
@@ -48,9 +48,6 @@ angular.module('app',[
       $location.path('logout');
     }
 
-    $interval(function(){
-      $scope.showSignUp = $location.url() !== "/";
-    }, 500);
 })
 .run((Auth, $rootScope, $location, $http) => Auth.status($rootScope, $location, $http))
 

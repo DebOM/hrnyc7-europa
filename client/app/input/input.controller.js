@@ -46,7 +46,6 @@ angular.module('app.input', [
     }
 
     Companies.getInfo($scope.job.website).then((data)=> {
-      console.log(data);
 
       if(data === undefined) return;
 

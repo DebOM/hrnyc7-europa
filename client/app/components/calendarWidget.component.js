@@ -2,7 +2,6 @@ angular.module('calendarWidget', [])
 .component('calendarWidget', {
   templateUrl: './app/components/calendarWidgetTemplate.html',
   controller: function calendarController($scope, $http, $route, $mdDialog){
-    // $scope.date = new Date();
     $scope.today = new Date();
     $scope.dates = [];
 
@@ -19,6 +18,7 @@ angular.module('calendarWidget', [])
       });
     });
 
+    // Popup dialog upon clicking a date on the calendar
     $scope.showPrerenderedDialog = function(ev) {
       $scope.date = ev.target.parentNode.attributes['aria-label'].value;
       $scope.taskDate = new Date($scope.date);
@@ -32,6 +32,7 @@ angular.module('calendarWidget', [])
       });
     };
 
+    //Formula to show dates on the calendar (see calendar html "md-date-filter")
     $scope.filterDates = date => {
       var year = date.getFullYear();
       var month = date.getMonth();
