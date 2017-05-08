@@ -4,6 +4,10 @@ Job Search Management Tool
 
 Job seekers can use this dashboard to plan and manage the entire job application process.
 
+# Live Demo
+
+http://hrnyc7-europa.herokuapp.com
+
 ## Team
 
   - __Product Owner__: Thomas O'Connor
